@@ -1,0 +1,228 @@
+:root {
+    --primary-dark: #0a0f2b;
+    --secondary-dark: #1a2356;
+    --accent-dark: #00d4ff;
+    --text-dark: #ffffff;
+    --primary-light: #e6f3ff;
+    --secondary-light: #ffffff;
+    --accent-light: #007bff;
+    --text-light: #ffeb3b; /* Amarelo para tema claro */
+    --folder-color: #ff6b6b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.theme-dark {
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+    color: var(--text-dark);
+}
+
+.theme-light {
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+    color: var(--text-light);
+}
+
+.futuristic-menu {
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.futuristic-btn {
+    padding: 10px 20px;
+    background: var(--accent-dark);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.futuristic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.futuristic-input {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 100%;
+}
+
+.theme-light .futuristic-input {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
+}
+
+.futuristic-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+.file-grid, .folder-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.file-grid li, .folder-grid li {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folder-grid li {
+    background: rgba(255, 107, 107, 0.2);
+}
+
+.file-grid li:hover, .folder-grid li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+.folder-grid li:hover {
+    background: rgba(255, 107, 107, 0.3);
+}
+
+.file-icon {
+    margin-right: 10px;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    color: var(--accent-dark);
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-light .buttons button {
+    color: var(--accent-light);
+}
+
+.buttons button:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.futuristic-breadcrumbs {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .futuristic-breadcrumbs {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.futuristic-breadcrumbs span {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.futuristic-breadcrumbs span:hover {
+    background: var(--accent-dark);
+}
+
+.theme-light .futuristic-breadcrumbs span:hover {
+    background: var(--accent-light);
+}
+
+.futuristic-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--secondary-dark);
+    padding: 30px;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+}
+
+.theme-light .modal-content {
+    background: var(--secondary-light);
+    color: var(--text-light);
+}
+
+.modal-close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.modal-close:hover {
+    color: #c0392b;
+}
+
+.futuristic-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.futuristic-viewer img, .futuristic-viewer iframe {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
